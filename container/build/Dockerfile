@@ -24,10 +24,10 @@ RUN cd src &&\
 	 git clone https://github.com/Bento-Robotics/TunnelVision &&\
    cd ..
 
-# Build workspace (lo-speed for pi zero)
+# Build workspace
 RUN bash -c " \
 	 . /opt/ros/$ROS_DISTRO/setup.bash &&\
-         colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release -j1 \
+         colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release \
 	 "
 
 # Set up automatic sourcing
