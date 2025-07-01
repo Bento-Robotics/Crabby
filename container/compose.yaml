@@ -1,0 +1,30 @@
+version: "3.0"
+
+services:
+  crabby:
+    image: crabby:jazzy
+    build:
+      context: ./build/
+      network: host
+      platforms: # select according to hardware
+      #- "linux/amd64"
+      - "linux/arm64"
+    container_name: crabby-ros
+    logging:
+      #driver: "local"
+      options:
+        max-size: "10m"
+        max-file: "2"
+    user: root
+    init: true
+    restart: always
+    privileged: true
+    environment:
+        - EDU_ROBOT_NAMESPACE=crabby
+    network_mode: "host"
+    volumes:
+      - './launch-content:/launch-content:ro'
+      - '/dev:/dev'
+      - '/run/udev:/run/udev' # libcamera won't work without this
+    working_dir: '/launch-content'
+    command: 'ros2 launch crabby.launch.py robot_namespace:="crabby"'

@@ -1,0 +1,24 @@
+/**:
+  ros__parameters:
+    #format: "RGB888" # pixel format of streaming buffer
+    role: "video"    # stream role (one of {raw, still, video, viewfinder})
+    width: 640       # image dimensions
+    height: 480      # "
+    camera: 1        # camera ID (ID - 1)
+    format: "MJPEG"
+
+# get camera controls:
+# `cam --list-controls -cₓ`
+#
+## Example: ##
+# cam --list-controls -c1
+# > Control: Brightness: [-1.000000..0.992188]
+# > Control: Contrast: [0.569507..4.000000]
+#           Name↗                ↖Range
+
+    #ExposureTime: #[100..500000]
+    #Saturation: #[0.000000..2.000000]
+    #AnalogueGain: #[1.000000..4.000000]
+    AeEnable: true #[false..true]
+    #Contrast: #[0.500000..1.500000]
+    #Brightness: #[-1.000000..1.000000]

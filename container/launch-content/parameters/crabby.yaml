@@ -1,0 +1,47 @@
+# control_frequency: 16000
+# max_rpm: 204.5
+# weight_low_pass_encoder: 0.8
+# weight_low_pass_set_point: 0.8
+
+/**:
+  ros__parameters:
+    usingPowerManagementBoard: false
+    verbosity: false
+    canInterface: can0
+    frequencyScale: 32
+    inputWeight: 0.2
+    maxPulseWidth: 100
+    timeout: 500
+    kp: 0.5
+    ki: 40.0
+    kd: 0.0
+    antiWindup: 1
+    responseMode: 0
+
+    controllers: 2
+
+    controller0:
+      canID: 0
+      gearRatio: 44.0
+      encoderRatio: 2048.0
+      rpmMax: 204.0
+      invertEnc: 1
+      drive0:
+        channel: 0
+        kinematics: [9.1, 0.0, -8.3]
+      drive1:
+        channel: 1
+        kinematics: [-9.1, 0.0, -8.3]
+
+    controller1:
+      canID: 1
+      gearRatio: 44.0
+      encoderRatio: 2048.0
+      rpmMax: 204.0
+      invertEnc: 1
+      drive0:
+        channel: 0
+        kinematics: [-9.1, 0.0, -8.3]
+      drive1:
+        channel: 1
+        kinematics: [9.1, 0.0, -8.3]

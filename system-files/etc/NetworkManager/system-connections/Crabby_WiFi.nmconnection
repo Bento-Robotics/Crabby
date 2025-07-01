@@ -1,0 +1,25 @@
+[connection]
+id=Crabby AP
+uuid=00a139ed-2f3a-43de-92f6-e2ad2a2b3615
+type=wifi
+timestamp=1751398276
+
+[wifi]
+band=bg
+channel=11
+mode=ap
+ssid=Crabby
+
+[wifi-security]
+key-mgmt=wpa-psk
+psk=Crabbycrab
+
+[ipv4]
+address1=192.168.51.1/24
+method=shared
+
+[ipv6]
+addr-gen-mode=default
+method=disabled
+
+[proxy]
