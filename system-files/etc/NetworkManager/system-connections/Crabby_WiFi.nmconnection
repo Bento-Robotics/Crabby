@@ -12,7 +12,7 @@ ssid=Crabby
 
 [wifi-security]
 key-mgmt=wpa-psk
-psk=Crabbycrab
+psk=CrabbyCrabby
 
 [ipv4]
 address1=192.168.51.1/24
