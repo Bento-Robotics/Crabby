@@ -35,3 +35,10 @@ if [ "$YN" = "y" ]||[ "$YN" = "Y" ]; then
   sudo iw reg get | grep country
 fi
 
+PI_BASHRC="$HOME/.bashrc"
+if grep -q "bento robot" $PI_BASHRC ; then
+  printf "${YELLOW}WARN: Pi bashrc, ${PI_BASHRC}, already was modified. Skipping \n ${NC}"
+else
+  cat ./bashrc.bash >>"$PI_BASHRC"
+  printf "${GREEN}OK: Pi bashrc, ${PI_BASHRC}, modified. \n ${NC}"
+fi
